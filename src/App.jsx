@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/books');
+        const response = await axios.get('https://bookserver-ckibb6cym-thebugfix1s-projects.vercel.app/books');
         setBooks(response.data);
       } catch (error) {
         console.error("Error fetching books:", error);
@@ -27,7 +27,7 @@ const App = () => {
   const handleAddBook = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/books', { title, author, genre, image });
+      await axios.post('https://bookserver-ckibb6cym-thebugfix1s-projects.vercel.app/books', { title, author, genre, image });
       setBooks([...books, { title, author, genre, image }]);
       setTitle('');
       setAuthor('');
